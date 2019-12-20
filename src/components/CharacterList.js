@@ -1,16 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import CharacterCard from "./CharacterCard.js";
+import { makeStyles } from "@material-ui/core/styles";
 
-export default function CharacterList() {
-  // TODO: Add useState to track data from useEffect
+export default function CharacterList({ charList, search }) {
+  const useStyles = makeStyles({
+    card: {
+      display: "flex",
+      margin: "auto",
+      flexWrap: "wrap",
+      minWidth: 275
+    },
+    title: {
+      fontSize: 14
+    },
+    pos: {
+      marginBottom: 12
+    }
+  });
+  const classes = useStyles();
 
-  useEffect(() => {
-    // TODO: Add API Request here - must run in `useEffect`
-    //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-  }, []);
-
-  return (
-    <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
-    </section>
-  );
+  if (search.length === 0) {
+    return (
+      <section className="character-list" className={classes.card}>
+        {charList.map(e => (
+          <CharacterCard char={e} />
+        ))}
+      </section>
+    );
+  } else {
+    return (
+      <section className="character-list card">
+        {search.map(e => (
+          <CharacterCard char={e} />
+        ))}
+      </section>
+    );
+  }
 }

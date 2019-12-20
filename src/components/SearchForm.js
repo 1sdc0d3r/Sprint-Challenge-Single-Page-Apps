@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function SearchForm() {
- 
+export default function SearchForm({ searchHandler }) {
   return (
     <section className="search-form">
-     // Add a search form here
+      <label>
+        Search:
+        <input
+          type="text"
+          placeholder="search name"
+          name="searchInput"
+          onChange={searchHandler}
+        />
+      </label>
     </section>
   );
 }
