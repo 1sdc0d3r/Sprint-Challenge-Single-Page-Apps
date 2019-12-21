@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -24,34 +24,35 @@ export default function CharacterCard({ char }) {
     }
   });
   const classes = useStyles();
-
   return (
-    <Card className={classes.card}>
-      <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          {char.id}
-        </Typography>
-        <Typography variant="h5" component="h2">
-          {char.name}
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          Species: {char.species}
-        </Typography>
-        <Typography variant="body2" component="p">
-          <br />
-          Current Status: {char.status}
-          <br />
-          Type: {char.type === "" ? "Not Available" : char.type}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+    <>
+      {/* <img src={char.img} /> */}
+      <Card className={classes.card}>
+        <CardContent>
+          <Typography
+            className={classes.title}
+            color="textSecondary"
+            gutterBottom
+          >
+            {char.id} {char.name}
+          </Typography>
+          <img src={char.image} />
+          <Typography variant="h5" component="h2"></Typography>
+          <Typography className={classes.pos} color="textSecondary">
+            Species: {char.species}
+          </Typography>
+          <Typography variant="body2" component="p">
+            <br />
+            Current Status: {char.status}
+            <br />
+            Type: {char.type === "" ? "Not Available" : char.type}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+    </>
   );
 }
 // return (

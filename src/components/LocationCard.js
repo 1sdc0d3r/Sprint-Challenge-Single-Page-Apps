@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import axios from "axios";
 
 export default function LocationCard({ location }) {
   const { name, type, dimension, residents, id } = location;
-
+  const [resident, setResident] = useState([]);
+  useEffect(() => {
+    axios
+      .get(residents)
+      .then(res => setResident(res.data.name))
+      .catch(err => console.log(err));
+  }, []);
   const useStyles = makeStyles({
     card: {
       minWidth: 275
@@ -42,6 +49,10 @@ export default function LocationCard({ location }) {
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
           Dimension: {dimension}
+          <br />
+          <br />
+          {/* Residents: {resident.map(e => console.log(e))} */}
+          Residents: {resident}
         </Typography>
         <Typography variant="body2" component="p">
           <br />

@@ -27,8 +27,8 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-<!--! CLient side routing has all the information/data already. With Server side it has to do a request to get the data  -->
-
+<!-- Client side routing has all the information/data already. With Server side it has to do a request to get the data  -->
+<!-- todo  -->
 
 ## Project Set Up
 

@@ -23,9 +23,7 @@ export default function App() {
     axios
       .get("https://rickandmortyapi.com/api/location")
       .then(res => setLocationList(res.data.results))
-      // .then(res => console.log(res.data.results))
       .catch(err => console.log(err));
-    
   }, []);
 
   const searchHandler = evt => {
@@ -34,8 +32,7 @@ export default function App() {
       charList.filter(e => e.name.toLowerCase().includes(value)),
       locationList.filter(e => e.name.toLowerCase().includes(value))
     );
-    console.log(search);
-  };
+ };
   return (
     <main>
       <Header

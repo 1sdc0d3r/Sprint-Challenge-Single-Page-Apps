@@ -21,7 +21,7 @@ export default function CharacterList({ charList, search }) {
 
   if (search.length === 0) {
     return (
-      <section className="character-list" className={classes.card}>
+      <section className="character-list card" className={classes.card}>
         {charList.map(e => (
           <CharacterCard char={e} />
         ))}
