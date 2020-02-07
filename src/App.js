@@ -32,9 +32,10 @@ export default function App() {
       charList.filter(e => e.name.toLowerCase().includes(value)),
       locationList.filter(e => e.name.toLowerCase().includes(value))
     );
- };
+  };
   return (
     <main>
+      {console.log(charList)}
       <Header
         searchHandler={searchHandler}
         setSearch={setSearch}
