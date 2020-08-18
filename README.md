@@ -1,6 +1,6 @@
 # Sprint Challenge: Single Page Applications
 
-## Rick & Morty Edition
+<!--! ## Rick & Morty Edition -->
 
 This challenge allows you to practice the concepts and techniques learned over the past Sprint and apply them in a concrete project. This Sprint explored Single Page Applications, React Router I - II, and React Forms.
 
@@ -27,7 +27,8 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+<!-- Client side routing has all the information/data already. With Server side it has to do a request to get the data  -->
+<!-- todo  -->
 
 ## Project Set Up
 
